@@ -1,0 +1,187 @@
+.doctorsSection {
+  padding: 100px 0;
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(180deg, transparent, rgba(11, 99, 206, 0.03) 50%, transparent);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionSubtitle {
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+}
+
+.doctorsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .doctorsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .doctorsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.doctorCardWrapper {
+  perspective: 1000px;
+  /* offsetY is applied inline for the curved layout */
+}
+
+.doctorCard {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  background: rgba(255, 255, 255, 0.6);
+  height: 100%;
+}
+
+.doctorCardWrapper:hover .doctorCard {
+  transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 30px 60px rgba(11, 99, 206, 0.15), inset 0 0 0 1px var(--color-secondary);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Image Frame & Hover Effects */
+.imageFrame {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  transform: translateZ(30px);
+}
+
+.glowingRing {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  opacity: 0.2;
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.doctorCardWrapper:hover .glowingRing {
+  opacity: 1;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.doctorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: relative;
+  z-index: 2;
+}
+
+/* Social Overlay */
+.socialOverlay {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.doctorCardWrapper:hover .socialOverlay {
+  opacity: 1;
+  bottom: -5px;
+}
+
+.socialIcon {
+  color: var(--color-primary);
+  transition: transform 0.2s;
+}
+
+.socialIcon:hover {
+  transform: scale(1.2);
+  color: var(--color-secondary);
+}
+
+/* Doctor Info */
+.doctorInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateZ(20px);
+}
+
+.doctorName {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+
+.qualification {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+
+.specialityBadge {
+  background: rgba(11, 99, 206, 0.1);
+  color: var(--color-primary);
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.experience {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.bookBtn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  transform: translateZ(25px);
+}

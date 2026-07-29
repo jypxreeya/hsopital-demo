@@ -1,0 +1,119 @@
+.testimonialSection {
+  padding: 100px 0;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.headerContainer {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionSubtitle {
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+}
+
+.carouselContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.carouselContainer::before,
+.carouselContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carouselContainer::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-background), transparent);
+}
+
+.carouselContainer::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-background), transparent);
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 32px;
+  width: fit-content;
+  animation: scroll-left 40s linear infinite;
+}
+
+.carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 16px)); } /* -50% of the doubled track */
+}
+
+.reviewCard {
+  width: 350px;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 0.4);
+  /* Gentle floating effect */
+  animation: gentle-float 6s ease-in-out infinite alternate;
+}
+
+.reviewCard:nth-child(even) {
+  animation-delay: -3s;
+}
+
+@keyframes gentle-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.quoteIcon {
+  color: var(--color-secondary);
+  opacity: 0.2;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.rating {
+  color: #FFB800;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.reviewText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.author {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1rem;
+}

@@ -1,0 +1,130 @@
+.whySection {
+  padding: 100px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionSubtitle {
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+}
+
+.cubeGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .cubeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cubeGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cubeScene {
+  width: 100%;
+  height: 250px;
+  perspective: 1000px;
+  background: transparent;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cubeScene:hover .cube {
+  transform: rotateY(-90deg);
+}
+
+.cubeFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  backface-visibility: hidden;
+  /* Ensure the glass panel has a background since it's used as a 3D face */
+  background: rgba(255, 255, 255, 0.7); 
+}
+
+.cubeFaceFront {
+  transform: rotateY(0deg) translateZ(125px);
+  /* TranslateZ should be half the width of the cube approximately.
+     Since width is responsive, we'll use a fixed approximate translate or adjust approach.
+     Let's use a fixed max-width for the scene to make math easier, 
+     but 125px works well if height is 250px and width is similar. */
+}
+
+.cubeFaceRight {
+  transform: rotateY(90deg) translateZ(150px); /* Slightly larger Z to pop out */
+  background: rgba(248, 251, 253, 0.9);
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 30px rgba(11, 99, 206, 0.1);
+}
+
+/* Let's fix the 3D math for responsive cubes. 
+   Using a wrapper that enforces aspect ratio or fixing dimensions is better for 3D cubes. */
+.cubeScene {
+  max-width: 250px;
+  margin: 0 auto;
+}
+.cubeFaceFront { transform: rotateY(0deg) translateZ(125px); }
+.cubeFaceRight { transform: rotateY(90deg) translateZ(125px); left: 125px; width: 250px; }
+
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.icon {
+  color: white;
+}
+
+.cubeTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cubeDesc {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}

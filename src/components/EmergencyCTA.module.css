@@ -1,0 +1,134 @@
+.ctaSection {
+  position: relative;
+  padding: 120px 0;
+  margin-top: 60px;
+  background-color: var(--color-primary);
+  overflow: hidden;
+  z-index: 5;
+}
+
+.backgroundGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(107, 231, 255, 0.4) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.particlesOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.ctaContainer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.contentWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pulseIcon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 24px;
+  position: relative;
+  box-shadow: 0 0 40px rgba(107, 231, 255, 0.5);
+}
+
+.pulseIcon::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.headline {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.subheadline {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.hugeCallBtn {
+  background: white;
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hugeCallBtn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.whatsappBtn {
+  background: #25D366;
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 20px 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+.whatsappBtn:hover {
+  transform: translateY(-4px);
+  background: #20BA5C;
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+}

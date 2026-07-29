@@ -1,0 +1,74 @@
+.deptCardWrapper {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(11, 99, 206, 0.1);
+  transform-origin: center center;
+}
+
+.deptCardInner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.deptIcon {
+  color: white;
+}
+
+.deptInfo {
+  flex: 1;
+}
+
+.deptName {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-top: 4px;
+}
+
+.deptDescWrapper {
+  overflow: hidden;
+}
+
+.deptDesc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--color-text-light);
+}
+
+/* Interaction states */
+.deptCardWrapper:hover,
+.deptCardWrapper.hovered {
+  transform: scale(1.15) translateZ(20px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 40px rgba(54, 194, 255, 0.25), 0 0 20px rgba(107, 231, 255, 0.4);
+  border-color: var(--color-secondary);
+  z-index: 1000 !important;
+}
+
+.deptCardWrapper.faded {
+  opacity: 0.3;
+  transform: scale(0.9);
+  filter: grayscale(0.5);
+}
