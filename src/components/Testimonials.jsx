@@ -32,15 +32,6 @@ const Testimonials = () => {
               <h4 className={styles.author}>- {review.author}</h4>
             </div>
           ))}
-          {/* Duplicate set for seamless looping */}
-          {reviews.map((review, index) => (
-            <div key={`dup-${index}`} className={`glass-panel ${styles.reviewCard}`}>
-              <Quote size={40} className={styles.quoteIcon} />
-              <div className={styles.rating}>{review.rating}</div>
-              <p className={styles.reviewText}>"{review.text}"</p>
-              <h4 className={styles.author}>- {review.author}</h4>
-            </div>
-          ))}
         </div>
       </div>
     </section>

@@ -25,9 +25,18 @@
 
 .carouselContainer {
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
   padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  scrollbar-width: none;
+}
+
+.carouselContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .carouselContainer::before,
@@ -55,37 +64,19 @@
   display: flex;
   gap: 32px;
   width: fit-content;
-  animation: scroll-left 40s linear infinite;
-}
-
-.carouselTrack:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 16px)); } /* -50% of the doubled track */
+  padding: 0 5%;
 }
 
 .reviewCard {
   width: 350px;
+  min-width: 350px;
   padding: 40px;
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   position: relative;
   background: rgba(255, 255, 255, 0.4);
-  /* Gentle floating effect */
-  animation: gentle-float 6s ease-in-out infinite alternate;
-}
-
-.reviewCard:nth-child(even) {
-  animation-delay: -3s;
-}
-
-@keyframes gentle-float {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  scroll-snap-align: center;
 }
 
 .quoteIcon {
