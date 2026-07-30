@@ -185,3 +185,32 @@
   justify-content: center;
   transform: translateZ(25px);
 }
+
+@media (max-width: 767px) {
+  .doctorsContainer {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    gap: 20px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .doctorsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .doctorCardWrapper {
+    min-width: 100%;
+    scroll-snap-align: center;
+    transform: none !important;
+  }
+  .doctorCard {
+    transform: none !important;
+  }
+  .doctorCardWrapper:hover .doctorCard {
+    transform: none !important;
+  }
+  .doctorCardWrapper:hover .socialOverlay {
+    bottom: -15px; /* Disable hover movement */
+  }
+}

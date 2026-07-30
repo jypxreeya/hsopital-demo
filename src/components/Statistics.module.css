@@ -69,3 +69,22 @@
   color: var(--color-text);
   letter-spacing: 0.5px;
 }
+
+@media (max-width: 767px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .statCard {
+    padding: 24px 16px;
+    border-radius: 24px;
+    animation: none !important;
+    transform: none !important;
+  }
+  .statValue {
+    font-size: 2rem;
+  }
+  .statLabel {
+    font-size: 0.9rem;
+  }
+}

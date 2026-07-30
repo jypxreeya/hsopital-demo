@@ -148,3 +148,37 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
 }
+
+/* Mobile Responsiveness Rules (320px - 480px) */
+@media (max-width: 767px) {
+  /* Typography overrides */
+  h1, .h1 { font-size: 34px !important; }
+  h2, .h2 { font-size: 28px !important; }
+  h3, .h3 { font-size: 24px !important; }
+  p, body, .body { font-size: 16px !important; }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  /* Touch-friendly buttons */
+  button, .btn-primary, .btn-secondary {
+    min-height: 48px;
+    font-size: 16px !important;
+    border-radius: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Disable excessive hover scales on mobile */
+  .btn-primary:hover, button:hover {
+    transform: none !important;
+  }
+
+  /* Equal Spacing Between Sections */
+  section {
+    padding: 64px 0 !important;
+    margin-top: 0 !important;
+  }
+}

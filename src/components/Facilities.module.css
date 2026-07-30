@@ -123,3 +123,25 @@
   font-weight: 600;
   transform: translateZ(25px);
 }
+
+@media (max-width: 767px) {
+  .facilityCard {
+    width: calc(100vw - 32px);
+    min-width: calc(100vw - 32px);
+    padding: 24px 16px;
+    transform: none !important;
+  }
+  .iconHologram {
+    transform: none !important;
+  }
+  .facilityName, .facilityDesc, .badge {
+    transform: none !important;
+  }
+  .sliderTrack {
+    gap: 16px;
+    padding-right: 16px;
+  }
+  .sliderWrapper {
+    padding-left: 16px;
+  }
+}

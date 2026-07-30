@@ -108,3 +108,15 @@
   font-weight: 700;
   font-size: 1rem;
 }
+
+@media (max-width: 767px) {
+  .carouselTrack {
+    gap: 16px;
+    padding: 0 16px;
+  }
+  .reviewCard {
+    width: calc(100vw - 32px);
+    min-width: calc(100vw - 32px);
+    padding: 24px;
+  }
+}

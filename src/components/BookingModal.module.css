@@ -353,3 +353,24 @@
   border: 1px solid rgba(11, 99, 206, 0.2);
   color: var(--color-text);
 }
+
+@media (max-width: 767px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .modalContainer {
+    padding: 24px 16px;
+    max-height: 95vh;
+  }
+  .modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  .formActions {
+    flex-direction: column-reverse;
+  }
+  .submitBtn, .cancelBtn {
+    width: 100%;
+  }
+}

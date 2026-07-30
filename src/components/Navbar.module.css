@@ -173,3 +173,30 @@
   background: rgba(11, 99, 206, 0.05);
   color: var(--color-primary);
 }
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 12px 0;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .scrolled {
+    padding: 12px 0;
+    min-height: 72px;
+  }
+  
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logoText {
+    font-size: 20px !important;
+  }
+  
+  .navActions {
+    gap: 8px;
+  }
+}

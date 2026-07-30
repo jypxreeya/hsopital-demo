@@ -87,3 +87,25 @@
   color: var(--color-text-light);
   line-height: 1.5;
 }
+
+@media (max-width: 767px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .deptCard {
+    padding: 24px 16px;
+  }
+  .iconCircle {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+  .deptName {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .deptDesc {
+    font-size: 0.9rem;
+  }
+}

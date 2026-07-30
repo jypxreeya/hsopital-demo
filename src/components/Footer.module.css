@@ -185,3 +185,27 @@
   color: var(--color-text-light);
   font-size: 0.9rem;
 }
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 60px;
+  }
+  .footerContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .logoGroup {
+    justify-content: center;
+  }
+  .brandDesc {
+    margin: 0 auto 32px;
+  }
+  .newsletter {
+    margin: 0 auto;
+  }
+  .socialGroup {
+    justify-content: center;
+  }
+}
