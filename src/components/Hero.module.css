@@ -262,20 +262,9 @@
   }
   
   .floatingBadge {
-    opacity: 0.9 !important;
-    transform: none !important;
-    animation: none !important;
-    padding: 8px 12px;
-    gap: 8px;
+    display: none !important;
   }
-  
-  .floatingBadge strong {
-    font-size: 0.9rem;
-  }
-  
-  .floatingBadge span {
-    font-size: 0.75rem;
-  }
+
   
   .iconCircle {
     width: 32px;
