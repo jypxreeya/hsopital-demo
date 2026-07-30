@@ -223,7 +223,7 @@
     right: 0;
   }
   .heroVisual {
-    padding: 0;
+    display: none;
   }
   .imageWrapper {
     max-width: 400px;

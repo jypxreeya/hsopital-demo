@@ -131,6 +131,9 @@
     text-align: center;
     gap: 40px;
   }
+  .imageWrapper {
+    display: none;
+  }
   .contentCard {
     padding: 0 10px;
     display: flex;
